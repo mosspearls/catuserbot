@@ -12,6 +12,8 @@ COPY . .
 
 ENV PATH="/home/userbot/bin:$PATH"
 
+RUN apt-get update && apt-get install -y python3.10 python3.10-dev python3-pip && ln -sf /usr/bin/python3.10 /usr/bin/python3
+
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
