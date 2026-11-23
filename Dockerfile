@@ -1,5 +1,5 @@
 
-FROM catub/core:bullseye
+FROM python:3.10-slim-bullseye
 
 # Working directory
 WORKDIR /userbot
