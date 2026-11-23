@@ -12,7 +12,12 @@ COPY . .
 
 ENV PATH="/home/userbot/bin:$PATH"
 
-RUN rm -f /etc/apt/sources.list.d/nodesource.list && apt-get update && apt-get install -y python3.10 python3.10-dev python3-pip && ln -sf /usr/bin/python3.10 /usr/bin/python3
+RUN apt-get update && apt-get install -y \
+    git \
+    ffmpeg \
+    neofetch \
+    libjpeg-dev \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
